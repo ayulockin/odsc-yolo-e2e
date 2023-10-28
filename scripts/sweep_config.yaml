@@ -1,0 +1,76 @@
+# config.yaml
+program: tune.py
+method: bayes
+name: sweep
+metric:
+  goal: maximize
+  name: metrics/mAP50-95(B)
+parameters:
+  model:
+    values: ["yolov8n", "yolov8s", "yolov8m", "yolov8l", "yolov5nu", "yolov5su", "yolov5mu", "yolov5lu", "yolov5n6u", "yolov5s6u", "yolov5m6u", "yolov5l6u"]
+  batch_size: 
+    values: [4, 8, 16, 32]
+  imgsz:
+    values: [320, 640]
+  lr0:
+    min: 0.00001
+    max: 0.1
+  lrf:
+    min: 0.01
+    max: 1.0
+  momentum:
+    min: 0.6
+    max: 0.98
+  weight_decay:
+    min: 0.0
+    max: 0.001
+  warmup_epochs:
+    values: [0, 1, 2, 3, 4, 5]
+  warmup_momentum:
+    min: 0.0
+    max: 0.95
+  box:
+    min: 0.02
+    max: 0.2
+  cls:
+    min: 0.2
+    max: 4.0
+  hsv_h:
+    min: 0.0
+    max: 0.1
+  hsv_s:
+    min: 0.0
+    max: 0.9
+  hsv_v:
+    min: 0.0
+    max: 0.9
+  degrees:
+    min: 0.0
+    max: 45.0
+  translate:
+    min: 0.0
+    max: 0.9
+  scale:
+    min: 0.0
+    max: 0.9
+  shear:
+    min: 0.0
+    max: 10.0
+  perspective:
+    min: 0.0
+    max: 0.001
+  flipud:
+    min: 0.0
+    max: 1.0
+  fliplr:
+    min: 0.0
+    max: 1.0
+  mosaic:
+    min: 0.0
+    max: 1.0
+  mixup:
+    min: 0.0
+    max: 1.0
+  copy_paste:
+    min: 0.0
+    max: 1.0
