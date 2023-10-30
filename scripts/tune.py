@@ -4,12 +4,12 @@ import wandb
 from ultralytics import YOLO
 
 
-wandb.init(project="object-detection-bdd", entity="reviewco")
+wandb.init(project="mlops-odsc", entity="ml-colabs")
 config = wandb.config
 
 model = YOLO(f"{config.model}.pt")
 model.train(
-    data="artifacts/bdd100k-ultralytics-format:v1/data.yaml",
+    data="artifacts/brackish-underwater-raw:v0/data.yaml",
     epochs=5,
     batch=config.batch_size,
     imgsz=config.imgsz,

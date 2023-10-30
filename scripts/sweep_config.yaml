@@ -7,7 +7,7 @@ metric:
   name: metrics/mAP50-95(B)
 parameters:
   model:
-    values: ["yolov8n", "yolov8s", "yolov8m", "yolov8l", "yolov8x", "yolov5lu", "yolov5m6u", "yolov5mu", "yolov5nu", "yolov5s6u", "yolov5su", "yolov5x6u", "yolov5xu"]
+    values: ["yolov8n", "yolov8s", "yolov8m", "yolov5nu", "yolov5su", "yolov5mu", "yolov5n6u", "yolov5s6u", "yolov5m6u"]
   batch_size: 
     values: [4, 8, 16, 32]
   imgsz:
@@ -74,4 +74,3 @@ parameters:
   copy_paste:
     min: 0.0
     max: 1.0
-  
