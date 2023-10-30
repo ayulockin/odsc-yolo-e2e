@@ -3,15 +3,11 @@ import shutil
 import wandb
 from ultralytics import YOLO
 
-from wandb.integration.ultralytics import add_wandb_callback
-
-
 
 wandb.init(project="mlops-odsc", entity="ml-colabs")
 config = wandb.config
 
 model = YOLO(f"{config.model}.pt")
-add_wandb_callback(model)
 model.train(
     data="artifacts/brackish-underwater-raw:v0/data.yaml",
     epochs=5,
